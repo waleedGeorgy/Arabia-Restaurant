@@ -1,0 +1,256 @@
+@use "base";
+
+.hamburger-menu {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    z-index: 500;
+    @media (max-width:800px){
+        width: 35px;
+        height: 35px;
+    }
+    @media (max-width:500px){
+        width: 27px;
+        height: 27px;
+    }
+    .menu {
+        @extend %fullspace;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        &-line {
+            width: 100%;
+            height: 4px;
+            background-color: base.$color-primary;
+            transform-origin: right;
+            transition: all .5s .5s ease-in-out;
+            @media (max-width:800px){
+                height: 3px;
+            }
+            @media (max-width:500px){
+                height: 2px;
+            }
+        }
+    }
+}
+
+.logo {
+    font-size: 4rem;
+    color: base.$color-primary;
+    @include base.flexCenter;
+    margin-right: 18px;
+    width: 110px;
+    height: 110px;
+    border: 3px solid base.$color-primary;
+    border-radius: 50%;
+    text-decoration: none;
+    @media (max-width:1000px) {
+        font-size: 3rem;
+        width: 90px;
+        height: 90px; 
+    }
+    @media (max-width:500px){
+        height: 50px;
+        width: 50px;
+        font-size: 2rem;
+        border-width: 2px;
+    }
+}
+
+.main-name{
+    font-family: base.$font-nunito;
+    font-size: 4rem;
+    color: base.$color-secondary;
+    @include base.styleTitle;
+    @media (max-width:1000px) {
+        font-size: 2.5rem;
+    }
+    @media (max-width:500px){
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+.sub-name {
+    font-family: base.$font-josefin;
+    font-size: 1.5rem;
+    color: base.$color-secondary;
+    text-align: center;
+    @include base.styleTitle;
+    @media (max-width:1000px) {
+        font-size: 1.1rem;
+    }
+    @media (max-width:800px){
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+.main-heading {
+    @include base.heading(base.$font-dancingScript, 5rem, 300, base.$color-primary, 2.5rem);
+    @media (max-width:1600px) {
+        font-size: 4.25rem;
+    }
+    @media (max-width:1000px) {
+        font-size: 3.75rem;
+    }
+    @media (max-width:1000px) {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.sub-heading {
+    @include base.heading(base.$font-josefin, 2.5rem, 300, base.$color-secondary, 2.5rem);
+    @media (max-width:1600px) {
+        font-size: 2.25rem;
+        text-align: center;
+    }
+    @media (max-width:1300px) {
+        font-size: 2rem;
+        text-align: center;
+    }
+    @media (max-width:1000px) {
+        font-size: 1.75rem;
+    }
+    @media (max-width:1000px) {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.main-button{
+    width: 10rem;
+    height: 2.5rem;
+    font-family: base.$font-josefin;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: base.$color-primary;
+    background-color: transparent;
+    border: 1px solid base.$color-primary;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 250ms ease-in-out;
+    &:hover {
+        background-color: base.$color-primary;
+        color: base.$color-black;
+    }
+    @media (max-width:800px){
+        width: 9rem;
+        height: 2.4rem;
+        font-size: 0.9rem;
+    }
+    @media (max-width:500px){
+        width: 8rem;
+        height: 2.3rem;
+        font-size: 0.8rem;
+    }
+}
+
+.card {
+    width: 33.3333%;
+    height: 30vw;
+    position: relative;
+    overflow: hidden;
+    &:hover .card-overlay {
+        left: 0;
+    }
+    @media (max-width:500px) {
+        width: 50%;
+    }
+    @media (max-width:350px) {
+        width: 100%;
+    }
+    &-overlay {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        @extend %fullspace;
+        background-color: rgba($color: base.$color-primary, $alpha: 0.6);
+        color: base.$color-secondary;
+        z-index: 5;
+        @include base.flexCenter;
+        flex-direction: column;
+        @media (max-width:350px) {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        transition: all 0.6s ease-in-out;
+        &-heading {
+            font-family: base.$font-nunito;
+            font-size: 50px;
+            @include base.styleTitle(capitalize);
+            @media (max-width:900px) {
+                font-size: 35px;
+            }
+            @media (max-width:650px){
+                font-size: 25px;
+            }
+            @media (max-width:400px) {
+                font-size: 20px;
+            }
+        }
+        &-paragraph {
+            font-family: base.$font-josefin;
+            font-size: 25px;
+            margin-bottom: 30px;
+            @media (max-width:350px) {
+                margin-bottom: 0;
+            }
+            @include base.styleTitle(capitalize);
+            @media (max-width:900px) {
+                font-size: 20px;
+            }
+            @media (max-width:650px){
+                font-size: 15px;
+            }
+            @media (max-width:500px) {
+                font-size: 12px;
+            }
+        }
+        &-button {
+            width: 140px;
+            height: 35px;
+            color: base.$color-primary;
+            background-color: base.$color-secondary;
+            font-family: base.$font-josefin;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid base.$color-primary;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            transition: all 300ms ease-in-out;
+            &:hover {
+                background-color: base.$color-dark;
+            }
+            @media (max-width:900px) {
+                font-size: 13px;
+                width: 125px;
+                height: 30px;
+            }
+            @media (max-width:650px){
+                font-size: 10px;
+                width: 105px;
+                height: 30px;
+            }
+            @media (max-width:500px) {
+                font-size: 10px;
+                width: 90px;
+                height: 22px;
+            }
+        }
+    }
+    &-img {
+        @extend %fullspace;
+        object-fit: cover;
+        opacity: 0.5;
+    }
+}
