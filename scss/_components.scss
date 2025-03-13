@@ -105,7 +105,7 @@
 }
 
 .sub-heading {
-    @include base.heading(base.$font-josefin, 2.5rem, 300, base.$color-secondary, 2.5rem);
+    @include base.heading(base.$font-josefin, 5rem, 300, base.$color-secondary, 2.5rem);
     @media (max-width:1600px) {
         font-size: 2.25rem;
         text-align: center;
