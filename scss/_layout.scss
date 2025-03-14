@@ -25,6 +25,8 @@
             }
         }
         &-right {
+            display: flex;
+            flex-direction: column;
             width: 50vw;
             height: 100vh;
             background-color: #1f1f1d;
@@ -36,6 +38,15 @@
                 width: 100vw;
                 right: -100vw;
             }
+            &-header {
+                color: base.$color-primary;
+                font-family: base.$font-josefin;
+                font-size: 3.25rem;
+                margin-bottom: 1.5rem;
+                @media (max-width:600px) {
+                    font-size: 3rem;
+                }
+            }
         }
         .nav-list{
             &-item {
@@ -43,21 +54,21 @@
             }
             &-link {
                 font-family: base.$font-dancingScript;
-                font-size: 2.5rem;
+                font-size: 3rem;
                 @include base.styleTitle(capitalize);
                 text-decoration: none;
                 color: base.$color-secondary;
                 display: block;
-                margin: 1.2rem;
+                margin: 0.75rem;
                 text-align: center;
-                transition: all 0.25s ease-in-out;
+                transition: all 0.2s ease-in-out;
                 &:hover {
                     color: base.$color-primary;
                     scale: 110%;
                     letter-spacing: 2px;
                 }
                 @media (max-width:600px) {
-                    font-size: 2rem;
+                    font-size: 2.5rem;
                 }
             }
         }
@@ -92,7 +103,7 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    background: linear-gradient(rgba(base.$color-black, .85), rgba(base.$color-black, .65)), url(../images/background.webp) center no-repeat;
+    background: linear-gradient(rgba(base.$color-black, .8), rgba(base.$color-black, .7)), url(../images/background.webp) center no-repeat;
     background-size: cover;
     .brand {
         @include base.centering(15%);

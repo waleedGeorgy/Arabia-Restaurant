@@ -45,6 +45,8 @@ body {
   opacity: 0.9;
 }
 .navbar-navigation-right {
+  display: flex;
+  flex-direction: column;
   width: 50vw;
   height: 100vh;
   background-color: #1f1f1d;
@@ -61,30 +63,41 @@ body {
     right: -100vw;
   }
 }
+.navbar-navigation-right-header {
+  color: #ea9b60;
+  font-family: "Josefin Sans", serif;
+  font-size: 3.25rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 600px) {
+  .navbar-navigation-right-header {
+    font-size: 3rem;
+  }
+}
 .navbar-navigation .nav-list-item {
   list-style: none;
 }
 .navbar-navigation .nav-list-link {
   font-family: "Dancing Script", cursive;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: capitalize;
   text-decoration: none;
   color: whitesmoke;
   display: block;
-  margin: 1.2rem;
+  margin: 0.75rem;
   text-align: center;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .navbar-navigation .nav-list-link:hover {
-  color: #d3ab55;
+  color: #ea9b60;
   scale: 110%;
   letter-spacing: 2px;
 }
 @media (max-width: 600px) {
   .navbar-navigation .nav-list-link {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -116,7 +129,7 @@ body {
   width: 100%;
   height: 100vh;
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65)), url(../images/background.webp) center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url(../images/background.webp) center no-repeat;
   background-size: cover;
 }
 .header .brand {
@@ -204,7 +217,7 @@ body {
   }
 }
 .about-us-right .stars .star {
-  color: #d3ab55;
+  color: #ea9b60;
   font-size: 1rem;
   margin-left: 0.9rem;
 }
@@ -286,7 +299,7 @@ body {
   transition: all 0.3s ease-in-out;
 }
 .footer .social-media-link:hover {
-  color: #d3ab55;
+  color: #ea9b60;
 }
 @media (max-width: 1000px) {
   .footer .social-media-link {
@@ -349,7 +362,7 @@ body {
 .hamburger-menu .menu-line {
   width: 100%;
   height: 4px;
-  background-color: #d3ab55;
+  background-color: #ea9b60;
   transform-origin: right;
   transition: all 0.5s 0.5s ease-in-out;
 }
@@ -365,31 +378,23 @@ body {
 }
 
 .logo {
-  font-size: 4rem;
-  color: #d3ab55;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 18px;
-  width: 110px;
-  height: 110px;
-  border: 3px solid #d3ab55;
-  border-radius: 50%;
-  text-decoration: none;
+  margin-right: 15px;
+  width: auto;
+  height: 135px;
 }
 @media (max-width: 1000px) {
   .logo {
-    font-size: 3rem;
-    width: 90px;
-    height: 90px;
+    width: auto;
+    height: 105px;
   }
 }
 @media (max-width: 500px) {
   .logo {
-    height: 50px;
-    width: 50px;
-    font-size: 2rem;
-    border-width: 2px;
+    width: auto;
+    height: 85px;
   }
 }
 
@@ -427,7 +432,7 @@ body {
     font-size: 1.1rem;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   .sub-name {
     font-size: 1rem;
     text-align: center;
@@ -436,9 +441,9 @@ body {
 
 .main-heading {
   font-family: "Dancing Script", cursive;
-  font-size: 5rem;
+  font-size: 9rem;
   font-weight: 300;
-  color: #d3ab55;
+  color: #ea9b60;
   margin-bottom: 2.5rem;
 }
 @media (max-width: 1600px) {
@@ -446,12 +451,17 @@ body {
     font-size: 4.25rem;
   }
 }
+@media (max-width: 1300px) {
+  .main-heading {
+    font-size: 4rem;
+  }
+}
 @media (max-width: 1000px) {
   .main-heading {
     font-size: 3.75rem;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 500px) {
   .main-heading {
     font-size: 3.5rem;
     margin-bottom: 1rem;
@@ -482,7 +492,7 @@ body {
     font-size: 1.75rem;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 500px) {
   .sub-heading {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -490,22 +500,22 @@ body {
 }
 
 .main-button {
-  width: 10rem;
-  height: 2.5rem;
+  width: 11rem;
+  height: 3.25rem;
   font-family: "Josefin Sans", serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #d3ab55;
+  color: #ea9b60;
   background-color: transparent;
-  border: 1px solid #d3ab55;
+  border: 1px solid #ea9b60;
   outline: none;
   cursor: pointer;
   border-radius: 10px;
-  transition: all 250ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 .main-button:hover {
-  background-color: #d3ab55;
+  background-color: #ea9b60;
   color: #000;
 }
 @media (max-width: 800px) {
@@ -546,7 +556,7 @@ body {
   position: absolute;
   top: 0;
   left: -100%;
-  background-color: rgba(211, 171, 85, 0.6);
+  background-color: rgba(234, 155, 96, 0.75);
   color: whitesmoke;
   z-index: 5;
   display: flex;
@@ -614,13 +624,13 @@ body {
 .card-overlay-button {
   width: 140px;
   height: 35px;
-  color: #d3ab55;
+  color: #ea9b60;
   background-color: whitesmoke;
   font-family: "Josefin Sans", serif;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: 1px solid #d3ab55;
+  border: 1px solid #ea9b60;
   border-radius: 30px;
   outline: none;
   cursor: pointer;
@@ -652,7 +662,7 @@ body {
 }
 .card-img {
   object-fit: cover;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 /*# sourceMappingURL=main.css.map */
